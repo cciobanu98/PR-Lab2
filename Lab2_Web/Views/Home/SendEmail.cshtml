@@ -1,0 +1,29 @@
+﻿@model SendEmailViewModel
+@{
+    ViewData["Title"] = "Send Email";
+}
+
+<h1>SendEmail</h1>
+<form asp-action="SendEmail" asp-controller="Home" asp-anti-forgery="true">
+    <div>
+        <div class="form-group">
+            <label asp-for="To">Send To</label>
+            <input type="text" asp-for="To" />
+            <span asp-validation-for="To" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Subject">Subject</label>
+            <input asp-for="Subject" />
+            <span asp-validation-for="Subject" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Body">Message</label>
+            <input asp-for="Body" />
+            <span asp-validation-for="Body" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send Email" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
+

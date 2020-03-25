@@ -1,0 +1,10 @@
+﻿@using MimeKit
+@model MimeMessage
+@{
+    ViewData["Title"] = "Message";
+}
+
+<h3>@Model.Subject</h3>
+<h4>@Model.From</h4>
+<h5>@Model.TextBody</h5>
+

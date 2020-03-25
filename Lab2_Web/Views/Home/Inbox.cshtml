@@ -1,0 +1,23 @@
+﻿@using MimeKit
+@model List<MimeMessage>
+@{ int rowNo = 0; }
+@{
+    ViewData["Title"] = "Inbox";
+}
+
+<table border="1" cellpadding="2" cellspacing="2">
+    <tr>
+        <th>Id</th>
+        <th>From</th>
+        <th>Subject</th>
+    </tr>
+    @foreach (var mail in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("Message", "Home", new { id = rowNo }))'">
+            <td>@(rowNo += 1)</td>
+            <td>@mail.From</td>
+            <td>@mail.Subject</td>
+        </tr>
+    }
+</table>
+
